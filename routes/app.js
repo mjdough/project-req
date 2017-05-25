@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
       if (err) {
           return res.send('Error!');
       }
-      res.render('node', {email: doc.email});
+    //res.render('node', {email: doc.email});
     });
 });
 
