@@ -1,0 +1,19 @@
+<article class="panel panel-default">
+  <br>
+    <div class="panel-header">
+        {{ message.title }}
+    </div>
+      <div class="config">
+          <a href="#" (click)="onEdit()">Edit</a>
+          <a href="#">Delete</a>
+      </div>
+      <hr>
+        <div class="panel-body">
+            {{ message.content }}
+        </div>
+    <footer class="panel-footer">
+        <div class="author">
+          {{ message.username }}
+        </div>
+    </footer>
+</article>
