@@ -7,4 +7,4 @@ var schema = new Schema({
     user: {type: Schema.Types.ObjectId, ref: 'User'}
 });
 
-module.exports = mongoose.model('Project', schema);
+module.exports = mongoose.model('Message', schema);
