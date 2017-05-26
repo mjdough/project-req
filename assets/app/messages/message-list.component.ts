@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Message } from "./message.model";
+import { MessageService } from "./message.service";
 
 @Component({
     selector: 'app-message-list',
@@ -13,23 +14,12 @@ import { Message } from "./message.model";
         </div>
     `
 })
-export class MessageListComponent {
-  messages: Message[] = [
-    new Message(
-    'A Project to demonstrate analysis.',
-    'Max Schwarz',
-    'Data Science Python Notebook'
-    ),
-    new Message(
-    'A Project to offer insurance services.',
-    'Mike Dougherty',
-    'Why whole life works!, says Ruby'
-    ),
-    new Message(
-    'This Project use saas-management to organize a team.',
-    'Mike Dougherty',
-    'Ruby on Rails website for company workgroups.'
-    )
-  ];
+export class MessageListComponent implements OnInit {
+  messages: Message[];
 
+  constructor(private messageService: MessageService) {}
+
+  ngOnInit() {
+      this.messages = this.messageService.getMessages();
+  }
 }
