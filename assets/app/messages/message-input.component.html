@@ -6,7 +6,7 @@
             type="text"
             id="content"
             class="form-control"
-            ngModel
+            [ngModel]="message?.content"
             name="content"
             required>
       <label for="title">Project</label>
@@ -14,11 +14,11 @@
             type="text"
             id="title"
             class="form-control"
-            ngModel
+            [ngModel]="message?.title"
             name="title"
             required>
     </div>
-    <button class="btn btn-primary" type="submit">
-      Save</button>
+    <button type="button" class="btn btn-danger" (click)="onClear(f)">Clear</button>
+    <button class="btn btn-primary" type="submit">Save</button>
   </form>
 </div>
