@@ -32,8 +32,6 @@ export class MessageComponent {
 
     constructor(private messageService: MessageService) {}
 
-    color = 'pink';
-
     onEdit() {
         this.messageService.editMessage(this.message);
     }

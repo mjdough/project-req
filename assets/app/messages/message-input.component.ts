@@ -23,17 +23,22 @@ export class MessageInputComponent implements OnInit {
               .subscribe(
                   result => console.log(result)
               );
-          this.message = null;
+
       } else {
           // Create
-      const message = new Message(form.value.content,'Max', form.value.title);
-        this.messageService.addMessage(message)
-            .subscribe(
-                data => console.log(data),
-                error => console.error(error)
+          const message = new Message(
+              form.value.content,
+              form.value.username,
+              form.value.title
             );
-      }
-      form.resetForm();
+            this.messageService.addMessage(message)
+                .subscribe(
+                    data => console.log(data),
+                    error => console.error(error)
+                );
+            }
+            form.resetForm();
+          this.message = null;
     }
 
     onClear(form: NgForm){
