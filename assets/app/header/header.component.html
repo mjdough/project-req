@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3">Welcome to Project Adviser</h1>
+      <p class="lead">Request, announce, or view a project!</p>
+      <hr class="my-4">
+      <p>Choose messenger to view the project list, or choose authenticate
+         to sign up and log in so you may add or edit an existing project.</p>
+
+        <header class="row">
+        <div class="page-header">
+          <nav class="col-md-8 col-md-offset-2">
+              <ul class="nav nav-pills pull-right">
+                  <li routerLinkActive="active"><a [routerLink]="['/messages']">Messenger</a></li>
+                  <li routerLinkActive="active"><a [routerLink]="['/auth']">Authentication</a></li>
+              </ul>
+          </nav>
+        </div>
+        </header>
+
+    </div>
+  </div>
+</div>
