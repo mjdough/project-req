@@ -1,4 +1,5 @@
 <div class="col-md-8 col-md-offset-2">
+  <h2>Enter your project and a description!</h2>
   <form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <div class="form-group">
       <label for="title">Project</label>
@@ -11,10 +12,12 @@
             name="title"
             required>
       <label for="content">Content</label>
-        <input
-            type="text"
+        <input  style="scroll-bar"
+            type="textarea"
             id="content"
             placeholder="Enter project description:"
+            cols="30"
+            rows="3"
             class="form-control"
             [ngModel]="message?.content"
             name="content"

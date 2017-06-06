@@ -8,6 +8,7 @@ import { AuthService } from "./auth.service";
     selector: 'app-logout',
     template: `
         <div class="col-md-8 col-md-offset-2">
+          Are you sure?
           <button class="btn btn-danger"
             (click)="onLogout()">Logout</button>
         </div>

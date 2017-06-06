@@ -7,6 +7,8 @@ import { MessageService } from "./message.service";
     selector: 'app-message-list',
     template: `
         <div class="col-md-8 col-md-offset-2">
+        <h2>Project List</h2>
+        <h5><i>You must be logged in and own the project to edit or delete.</i></h5><br>
           <app-message
             [inputMessage]="message"
             *ngFor="let message of messages"></app-message>

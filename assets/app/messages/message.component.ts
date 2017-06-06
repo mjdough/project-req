@@ -15,7 +15,6 @@ import { MessageService } from "./message.service";
       }
       .config {
         display: inline-block;
-        text-align: right;
         font-size: 14px;
         width: 19%;
       }
@@ -42,6 +41,14 @@ export class MessageComponent {
                 result => console.log(result)
             );
     }
+
+    onDetails() {
+        this.messageService.detailMessage(this.message)
+            .subscribe(
+              result => console.log(result)
+          );
+    }
+
 
     belongsToUser() {
         return localStorage.getItem('userId') == this.message.userId;

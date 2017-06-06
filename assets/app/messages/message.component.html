@@ -1,11 +1,9 @@
-<article class="panel panel-default">
 
+  <article class="panel panel-default">
     <div class="panel-header">
           {{ message.title }}
-        <div class="config">
-            <a (click)="onEdit()" *ngIf="belongsToUser()">Edit</a>
-            <a (click)="onDelete()" *ngIf="belongsToUser()">Delete</a>
-        </div>
+          <a (click)="onDetails(message)">
+          <h5><i>Details</i></h5></a>
     </div>
         <hr>
       <div class="panel-body">
@@ -14,8 +12,10 @@
     <footer class="panel-footer">
         <div class="author">
           {{ message.username }}
+          <div class="config pull-right">
+              <a (click)="onEdit()" *ngIf="belongsToUser()">Edit</a>
+              <a (click)="onDelete()" *ngIf="belongsToUser()">Delete</a>
+          </div>
         </div>
     </footer>
-
-
-</article>
+  </article>
