@@ -92,25 +92,8 @@ export class MessageService {
     }
 
     detailMessage(message: Message) {
-      return this.http.get('http://localhost:3000/message')
-          .map((response: Response) => {
-              const messages = response.json().obj;
-              let transformedMessages: Message[] = [];
-              for (let message of messages) {
-                transformedMessages.push(new Message(
-                    message.content,
-                    message.user.firstName,
-                    message.title,
-                    message._id,
-                    message.user._id)
-                );
-              }
-              this.messages = transformedMessages;
-              return transformedMessages;
-          })
-          .catch((error: Response) => {
-              this.errorService.handleError(error.json());
-              return Observable.throw(error.json());
-          });
+        console.log(message);
+        return message;
     }
+
 }

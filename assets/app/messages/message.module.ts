@@ -7,6 +7,7 @@ import { MessageListComponent } from "./message-list.component";
 import { MessageInputComponent } from "./message-input.component";
 import { MessagesComponent } from "./messages.component";
 import { MessageService } from "./message.service";
+import { TruncatePipe } from "../pipes/truncate.pipe";
 import { MessageDetailComponent } from "./message-detail.component";
 
 @NgModule({
@@ -15,6 +16,7 @@ import { MessageDetailComponent } from "./message-detail.component";
       MessageListComponent,
       MessageInputComponent,
       MessagesComponent,
+      TruncatePipe,
       MessageDetailComponent
     ],
     imports: [

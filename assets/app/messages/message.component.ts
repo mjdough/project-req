@@ -43,10 +43,7 @@ export class MessageComponent {
     }
 
     onDetails() {
-        this.messageService.detailMessage(this.message)
-            .subscribe(
-              result => console.log(result)
-          );
+        this.messageService.detailMessage(this.message);
     }
 
 
