@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { User } from "./user.model";
 import { AuthService } from "./auth.service";
@@ -11,7 +12,8 @@ import { AuthService } from "./auth.service";
 export class SignupComponent implements OnInit{
     myForm: FormGroup;
 
-    constructor(private authService: AuthService) {}
+    constructor(private authService: AuthService,
+                        private router: Router) {}
 
     onSubmit() {
         const user = new User(
@@ -26,6 +28,7 @@ export class SignupComponent implements OnInit{
                 error => console.error(error)
             );
         this.myForm.reset();
+        //this.router.navigate(['/']);
     }
 
     ngOnInit() {
