@@ -12,12 +12,12 @@
             name="title"
             required>
       <label for="content">Content</label>
-        <input  style="scroll-bar"
+        <input
             type="textarea"
+            cols="50"
+            rows="10"
             id="content"
             placeholder="Enter project description:"
-            cols="30"
-            rows="3"
             class="form-control"
             [ngModel]="message?.content"
             name="content"
