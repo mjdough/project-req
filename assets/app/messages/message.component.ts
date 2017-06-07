@@ -28,6 +28,7 @@ import { MessageService } from "./message.service";
 })
 export class MessageComponent {
     @Input('inputMessage') message: Message;
+    showDetail: boolean = false;
 
     constructor(private messageService: MessageService) {}
 
@@ -44,6 +45,7 @@ export class MessageComponent {
 
     onDetails() {
         this.messageService.detailMessage(this.message);
+        this.showDetail = !this.showDetail;
     }
 
 

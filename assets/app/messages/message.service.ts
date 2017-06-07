@@ -10,6 +10,7 @@ import { ErrorService } from "../errors/error.service";
 export class MessageService {
     private messages: Message[] = [];
     messageIsEdit = new EventEmitter<Message>();
+    showMessage = new EventEmitter<Message>();
 
     constructor(private http: Http, private errorService: ErrorService ) {}
 
@@ -92,8 +93,7 @@ export class MessageService {
     }
 
     detailMessage(message: Message) {
-        console.log(message);
-        return message;
+        this.showMessage.emit(message);
     }
 
 }

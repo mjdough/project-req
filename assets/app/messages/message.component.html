@@ -2,18 +2,24 @@
   <article class="panel panel-default">
     <div class="panel-header">
           {{ message.title }}
-          <a (click)="onDetails(message)">
-            <!-- print to console log -->
-          <h5><i>Details</i></h5></a>
-    </div>
-      <hr>
-      <div class="panel-body">
-          {{ message.content | limitChar : '100' }}
+          <a (click)="onDetails(message)"><h5><i>Details</i></h5></a>
+      <div class="col-md-8 col-md-offset-2 pull-left" *ngIf="showDetail">
+        <h5>Show Project Details</h5>
+        <textarea cols="50" rows="10" style="font-size: 14px; font-weight: 200px;">
+        Title: {{ message.title }}     User: {{ message.username }}
+
+        {{ message.content }}
+        </textarea>
       </div>
+
+    </div>
+      <!-- <div class="panel-body">
+          {{ message.content | limitChar : '100' }}
+      </div> -->
     <footer class="panel-footer">
         <div class="author">
           {{ message.username }}
-          <div class="config pull-right">
+          <div class="config text-right">
               <a (click)="onEdit()" *ngIf="belongsToUser()">Edit</a>
               <a (click)="onDelete()" *ngIf="belongsToUser()">Delete</a>
           </div>
